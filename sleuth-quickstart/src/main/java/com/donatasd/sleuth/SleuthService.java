@@ -23,15 +23,15 @@ public class SleuthService {
     }
 
     public void multipleSpanWork() throws InterruptedException  {
-        log.info("Still logging original span");
+        log.info("Original span");
         Span span = tracer.createSpan("New Span");
         try {
             this.emulateWork();
-            log.info("Logging using new span");
+            log.info("New span");
         } finally {
             tracer.close(span);
         }
-        log.info("Back to logging using original span");
+        log.info("Original span");
     }
 
     private void emulateWork() throws InterruptedException {

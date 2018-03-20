@@ -11,10 +11,6 @@
 
     <artifactId>sleuth-quickstart</artifactId>
 
-    <properties>
-        <org.springframework.boot.version>2.0.0.RELEASE</org.springframework.boot.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
