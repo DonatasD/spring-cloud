@@ -6,5 +6,5 @@ spring:
     config:
       server:
         git:
-          search-paths: config-store
+          search-paths: configuration-store
           uri: https://github.com/DonatasD/spring-cloud
