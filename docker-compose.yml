@@ -1,0 +1,17 @@
+version: '3'
+services:
+  configuration-service:
+    build:
+      context: ./configuration-service/
+      args:
+        JAR_FILE: ./target/configuration-service-1.0.jar
+    ports:
+      - "8888:8888"
+
+  eureka-service:
+    build:
+      context: ./eureka-service/
+      args:
+        JAR_FILE: ./target/eureka-service-1.0.jar
+    ports:
+      - "8761:8761"
