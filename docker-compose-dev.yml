@@ -7,12 +7,9 @@ services:
         JAR_FILE: ./target/configuration-service-1.0.jar
     ports:
       - "8888:8888"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
     restart: on-failure
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8888"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
 
   eureka-service:
     build:
@@ -21,6 +18,8 @@ services:
         JAR_FILE: ./target/eureka-service-1.0.jar
     ports:
       - "8761:8761"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
     restart: on-failure
     depends_on:
       - configuration-service

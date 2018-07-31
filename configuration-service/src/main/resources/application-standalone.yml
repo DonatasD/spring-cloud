@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: standalone
+
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:../configuration-store

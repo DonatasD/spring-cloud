@@ -1,0 +1,12 @@
+version: '3'
+services:
+  eureka-service:
+    build:
+      context: ./eureka-service/
+      args:
+        JAR_FILE: ./target/eureka-service-1.0.jar
+    ports:
+      - "8761:8761"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=standalone"
+    restart: on-failure
